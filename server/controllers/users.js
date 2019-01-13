@@ -9,11 +9,13 @@ class UserController {
 
   static async register(req, res) {
     try {
+      let image = await axios.get('https://randomfox.ca/floof/');
+      
       let response = await User.create({
         fullname: req.body.fullname,
         email: req.body.email,
         password: req.body.password,
-        picture_url: req.body.picture_url
+        picture_url: req.body.picture_url || image.data.image
       });
 
       let token = jwtSign({
