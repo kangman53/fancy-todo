@@ -1,0 +1,351 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>To Do Fancy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/metisMenu.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.min.css">
+    <!-- others css -->
+    <!-- <link rel="stylesheet" href="assets/css/typography.css"> -->
+    <link rel="stylesheet" href="assets/css/default-css.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- login area start -->
+    <div class="login-area" id="login-area">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form>
+                    <div class="login-form-head">
+                        <h4>Sign In</h4>
+                        <p>Hello there, Sign in and start managing your Todo List</p>
+                    </div>
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" id="email_login" required>
+                            <i class="ti-email"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" id="password_login" required>
+                            <i class="ti-lock"></i>
+                        </div>
+                        <div class="submit-btn-area">
+                            <button id="login_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                            <div class="login-other mt-4">
+                                <div class="col-12">
+                                    <a class="google-login m-auto" href="#" id="login-google">Log in with <i class="fa fa-google"></i></a>
+                                </div>
+                                <div class="g-signin2" data-width="300" data-height="200" data-longtitle="true"></div>
+                            </div>
+                        </div>
+                        <div class="form-footer text-center mt-5">
+                            <p class="text-muted">Don't have an account? <a href="javascript:void(0)" id="register">Sign up</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- login area end -->
+    <!-- register area start -->
+    <div class="login-area" id="register-area">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form>
+                    <div class="login-form-head">
+                        <h4>Sign up</h4>
+                        <p>Hello there, Sign up and Join with Us</p>
+                    </div>
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <label for="exampleInputName1">Full Name</label>
+                            <input type="text" id="fullname_register">
+                            <input type="text" id="picture_url_register" hidden>
+                            <i class="ti-user"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" id="email_register">
+                            <i class="ti-email"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" id="password_register">
+                            <i class="ti-lock"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label for="exampleInputPassword2">Confirm Password</label>
+                            <input type="password" id="confirm_password_register">
+                            <i class="ti-lock"></i>
+                        </div>
+                        <div class="submit-btn-area">
+                            <button id="register_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                        </div>
+                        <div class="form-footer text-center mt-5">
+                            <p class="text-muted">Already has an account? <a href="javascript:void(0)" id="login">Sign in</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- login area end -->
+    <!-- page container area start -->
+    <div class="page-container" id="main-content">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="#"><h1>Todo</h1></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+                            <li class="active">
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-notepad"></i><span>my todos</span></a>
+                                <ul class="collapse">
+                                    <li><a href="#" id="undone_sidebar">Undone</a></li>
+                                    <li><a href="#" id="history_sidebar">History</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="search-box pull-left">
+                            <form action="#">
+                                <input type="text" name="search" placeholder="Search..." id="search">
+                                <i class="ti-search"></i>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-6 col-sm-4 clearfix">
+                        <ul class="notification-area pull-right">
+                            <li id="full-view"><i class="ti-fullscreen"></i></li>
+                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- header area end -->
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h4 class="page-title pull-left">Dashboard</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar" id="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown" id="fullname">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#" id="logout">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page title area end -->
+            <div class="main-content-inner">
+                <!-- sales report area start -->
+                <div class="sales-report-area mt-5 mb-5">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="header-title" id="todo_title">Todo List</h4>
+                                    <div id="accordion" class="according accordion-s2 gradiant-bg">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a class="collapsed card-link" data-toggle="collapse" href="#undone">UNDONE</a>
+                                            </div>
+                                            <div id="undone" class="collapse" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <ul class="list-group" id="my-list-undone">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a class="collapsed card-link" data-toggle="collapse" href="#history">HISTORY</a>
+                                            </div>
+                                            <div id="history" class="collapse" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <ul class="list-group" id="my-list-history">
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="header-title" id="todo_title">Google Calendar</h4>
+                                    <pre id="content" style="white-space: pre-wrap;"></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card" id="input-todo-form">
+                                <div class="card-body">
+                                    <h4 class="header-title">Input Todo</h4>
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="col-form-label">Name</label>
+                                        <input class="form-control" type="text" id="todo_name_input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="col-form-label">Description</label>
+                                        <input class="form-control" type="text" id="todo_description_input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-datetime-local-input" class="col-form-label">Due Date</label>
+                                        <input class="form-control" type="date" id="due_date_input">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4" id="submit_todo">Submit</button>
+                                </div>
+                            </div>
+
+                            <div class="card" id="update-todo-form">
+                                <div class="card-body">
+                                    <h4 class="header-title">Update Todo</h4>
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="col-form-label">Name</label>
+                                        <input class="form-control" type="text" id="todo_id_update" hidden>
+                                        <input class="form-control" type="text" id="todo_name_update">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="col-form-label">Description</label>
+                                        <input class="form-control" type="text" id="todo_description_update">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-datetime-local-input" class="col-form-label">Due Date</label>
+                                        <input class="form-control" type="date" id="due_date_update">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4" id="update_todo">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sales report area end -->
+                <!-- Modal -->
+<div class="modal fade" id="modal-todo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-todo-title"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Description</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="detail_description" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Date Started</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="detail_date_started" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Due Date</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="detail_due_date" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Date Finished</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="detail_date_finished" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+            </div>
+        </div>
+        <!-- main content area end -->
+        <!-- footer area start-->
+        <footer>
+            <div class="footer-area">
+                <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
+            </div>
+        </footer>
+        <!-- footer area end-->
+    </div>
+    <!-- page container area end -->
+    <!-- jquery latest version -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+    <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/gc.js"></script>
+    <script src="./assets/js/todos.js"></script>
+</body>
+
+</html>
